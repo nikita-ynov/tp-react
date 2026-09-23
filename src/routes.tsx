@@ -3,6 +3,7 @@
 import App from './App.tsx'
 import { Outlet } from 'react-router-dom'
 import Login from './pages/Login.tsx';
+import Profile from './pages/Profile.tsx';
 
 const Layout = () => (
     <>
@@ -22,6 +23,10 @@ const routes = [
             {
                 path: "/login",
                 element: <Login />,
+            },
+            {
+                path: "/profile",
+                element: <Profile />,
             },
             // {
             //     path: "/user-lsit",

@@ -1,11 +1,30 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
+
 import routes from './routes.tsx'
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import type { User as UserType } from "./types/user";
+
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
+
 import { setLoggedUser } from './store/reducers/auth.ts'
+import { setUsers } from './store/reducers/user.ts'
+import { setLoading } from './store/reducers/loading.ts';
+
 import axios from 'axios'
+
+interface UsersResponse {
+  users: UserType[];
+}
+
+const getUsers = async () => {
+  const url = "https://dummyjson.com/users";
+  const response = await axios.get<UsersResponse>(url);
+  store.dispatch(setUsers(response.data.users))
+}
 
 const getLoggedUser = async () => {
   try {
@@ -23,7 +42,7 @@ const getLoggedUser = async () => {
   }
 }
 
-getLoggedUser();
+Promise.all([getUsers(), getLoggedUser()]).finally(() => store.dispatch(setLoading(false)))
 
 const router = createBrowserRouter(routes)
 
