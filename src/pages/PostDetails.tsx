@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import type {AppDispatch, RootState} from "../store/store.ts";
 import {addComment, addPost, removeComment, setComments, type Post, type PostComment} from "../store/reducers/blog.ts";
+import "../styles/blog.css";
 
 interface CommentsResponse {
     comments: PostComment[];
@@ -148,7 +149,7 @@ function PostDetails() {
     }
 
     return (
-        <>
+        <main className="post-details">
             <article>
                 <h1>{post.title}</h1>
                 <p>{post.body}</p>
@@ -156,12 +157,13 @@ function PostDetails() {
                 <p>Vues : {post.views}</p>
             </article>
 
-            <section>
+            <section className="comments-section">
                 <h2>Commentaires</h2>
 
                 {loggedUser && (
                     <>
                         <textarea
+                            className="comment-input"
                             value={commentBody}
                             onChange={event =>
                                 setCommentBody(event.target.value)
@@ -169,21 +171,21 @@ function PostDetails() {
                             placeholder="Votre commentaire"
                         />
 
-                        <button onClick={submitComment}>
+                        <button className="comment-submit" onClick={submitComment}>
                             Commenter
                         </button>
                     </>
                 )}
 
                 {(comments ?? []).map(comment => (
-                    <article key={comment.id}>
+                    <article className="comment-card" key={comment.id}>
                         <strong>
                             {comment.user.username}
                         </strong>
 
                         <p>{comment.body}</p>
 
-                        <button
+                        <button className="blog-delete-button"
                             onClick={() =>
                                 deleteComment(comment)
                             }
@@ -194,8 +196,8 @@ function PostDetails() {
                 ))}
             </section>
 
-            {error && <p>{error}</p>}
-        </>
+            {error && <p className="blog-message blog-message-error">{error}</p>}
+        </main>
     )
 }
 

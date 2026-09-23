@@ -7,6 +7,7 @@ import type {
     RootState
 } from "../store/store.ts";
 import {addPost, removePost, setPosts, type Post} from "../store/reducers/blog.ts";
+import "../styles/blog.css";
 
 interface PostsResponse {
     posts: Post[];
@@ -112,12 +113,17 @@ function Blog() {
     }
 
     return (
-        <>
-            <h1>Blog</h1>
+        <main className="blog-page container">
+            <header className="blog-hero">
+                <p className="blog-eyebrow">Communauté</p>
+                <h1>Le blog des recettes</h1>
+                <p>Partagez vos idées, vos astuces et vos expériences en cuisine.</p>
+            </header>
 
-            {error && <p>{error}</p>}
+            {error && <p className="blog-message blog-message-error">{error}</p>}
 
-            <form onSubmit={submitPost}>
+            <form className="blog-form" onSubmit={submitPost}>
+                <h2>Publier un article</h2>
                 <input
                     type="text"
                     placeholder="Titre"
@@ -143,34 +149,42 @@ function Blog() {
                 </button>
             </form>
 
-            {posts.map(post => (
-                <article key={post.id}>
+            <section className="blog-posts">
+                <div className="blog-section-heading">
+                    <h2>Derniers articles</h2>
+                    <span>{posts.length} article{posts.length > 1 ? "s" : ""}</span>
+                </div>
+                <div className="blog-post-grid">
+                {posts.map(post => (
+                <article className="blog-post-card" key={post.id}>
                     <h2>{post.title}</h2>
 
-                    <p>
+                    <p className="blog-post-tags">
                         Tags : {post.tags.join(", ")}
                     </p>
 
-                    <p>
-                        👍 {post.reactions.likes}
-                        {" — "}
-                        👎 {post.reactions.dislikes}
+                    <p className="blog-post-stats">
+                        <span>Likes {post.reactions.likes}</span>
+                        <span>Dislikes {post.reactions.dislikes}</span>
+                        <span>Vues {post.views}</span>
                     </p>
 
-                    <p>Vues : {post.views}</p>
-
-                    <Link to={`/posts/${post.id}`}>
+                    <div className="blog-post-actions">
+                    <Link className="blog-read-link" to={`/posts/${post.id}`}>
                         Lire l’article
                     </Link>
 
-                    <button
+                    <button className="blog-delete-button"
                         onClick={() => deletePost(post)}
                     >
                         Supprimer
                     </button>
+                    </div>
                 </article>
             ))}
-        </>
+                </div>
+            </section>
+        </main>
     )
 }
 
