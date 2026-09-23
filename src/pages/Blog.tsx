@@ -38,16 +38,19 @@ function Blog() {
             return;
         }
 
-        axios
-            .get<PostsResponse>(
-                "https://dummyjson.com/posts?limit=0"
-            )
-            .then(response => {
+        const loadPosts = async () => {
+            try {
+                const response = await axios.get<PostsResponse>(
+                    "https://dummyjson.com/posts?limit=0"
+                );
+
                 dispatch(setPosts(response.data.posts));
-            })
-            .catch(() => {
+            } catch {
                 setError("Impossible de charger les articles.");
-            });
+            }
+        };
+
+        loadPosts();
     }, [dispatch, postsLoaded]);
 
     const submitPost = async (event: FormEvent) => {
