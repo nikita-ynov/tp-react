@@ -7,8 +7,9 @@ import GuestRoute from './routes/GuestRoute.tsx';
 import PrivateRoute from './routes/PrivateRoute.tsx';
 import PageNotFound from './pages/PageNotFound.tsx';
 import Users from './pages/Users.tsx';
-import Favorites from './pages/Favorites.tsx';
+import Favorites from './pages/favorites.tsx';
 import RecipeDetails from './pages/RecipeDetails.tsx';
+import User from './pages/User.tsx';
 
 const Layout = () => (
     <>
@@ -36,6 +37,10 @@ const routes = [
             {
                 path: "/users",
                 element: <Users />,
+            },
+            {
+                path: "/user/:userId",
+                element: <User />,
             },
             {
                 path: "/favorites",
