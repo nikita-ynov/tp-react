@@ -6,37 +6,32 @@ Application web de recettes réalisée avec React et TypeScript. Elle permet de 
 
 Cette partie doit être complétée par les trois contributeurs. Chaque personne présente elle-même son travail en utilisant la première personne.
 
-### Contributeur 1 - [Nom et prénom]
+### Contributeur 1 - Nikita Petrenko
 
-> Je me suis occupé(e) de ...
+> Je me suis occupé(e) de l'authentification et la structure 
 >
-> J'ai réalisé ...
->
-> Les fichiers ou fonctionnalités principales de ma partie sont : ...
+> J'ai réalisé feature/auth feature/header et feature/users
 
-### Contributeur 2 - [Nom et prénom]
+### Contributeur 2 - Martin Risch
 
-> Je me suis occupé(e) de ...
+> Je me suis occupé(e) de l'ajout des post et des favoris
 >
-> J'ai réalisé ...
->
-> Les fichiers ou fonctionnalités principales de ma partie sont : ...
+> J'ai réalisé feature/fav et feature/blog
 
-### Contributeur 3 - [Nom et prénom]
+### Contributeur 3 - Kevin Joffret
 
-> Je me suis occupé(e) de ...
+> Je me suis occupé(e) du design et de la citation du jour
 >
-> J'ai réalisé ...
->
-> Les fichiers ou fonctionnalités principales de ma partie sont : ...
+> J'ai réalisé feature/css et feature/quotes
 
 ## Fonctionnalités
 
 - Affichage de la liste des recettes depuis l'API DummyJSON.
 - Consultation du détail d'une recette avec l'URL `/recipe/:id`.
+- Ajout de post via redux
 - Ajout et retrait de recettes dans les favoris.
 - Connexion et déconnexion d'un utilisateur.
-- Conservation de la session grâce au token stocké dans `localStorage`.
+- Conservation de la session grâce à l'access token stocké dans `localStorage`.
 - Accès protégé au profil utilisateur.
 - Affichage de la liste des utilisateurs.
 - Navigation entre les pages avec React Router.
