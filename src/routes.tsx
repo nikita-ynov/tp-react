@@ -12,7 +12,6 @@ import Blog from './pages/Blog.tsx';
 import PostDetails from './pages/PostDetails.tsx';
 import Favorites from "./pages/favorites.tsx";
 import UserDetails from "./pages/UserDetails.tsx";
-import User from './pages/User.tsx';
 
 const Layout = () => (
     <>
@@ -44,10 +43,6 @@ const routes = [
             {
                 path: "/user/:id",
                 element: <UserDetails />,
-            },
-            {
-                path: "/user/:userId",
-                element: <User />,
             },
             {
                 path: "/favorites",
