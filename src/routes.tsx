@@ -2,6 +2,7 @@
 
 import App from './App.tsx'
 import { Outlet } from 'react-router-dom'
+import Login from './pages/Login.tsx';
 
 const Layout = () => (
     <>
@@ -18,6 +19,10 @@ const routes = [
                 path: "/",
                 element: <App />,
             },
+            {
+                path: "/login",
+                element: <Login />,
+            },
             // {
             //     path: "/user-lsit",
             //     element: <UserList />,
@@ -26,7 +31,7 @@ const routes = [
             //     path: "/user/:id",
             //     element: <User />,
             // },
- 
+
             // {
             //     path: "*",
             //     element: <PageNotFound />,
