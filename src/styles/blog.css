@@ -1,0 +1,273 @@
+.blog-page,
+.post-details {
+	padding-top: 48px;
+	padding-bottom: 64px;
+	color: #33475b;
+}
+
+.blog-hero {
+	margin-bottom: 32px;
+	padding: 40px;
+	border-radius: 18px;
+	background: linear-gradient(135deg, #f4e3d3, #e9eef3);
+}
+
+.blog-eyebrow {
+	margin-bottom: 8px;
+	color: #c16f35;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.blog-hero h1,
+.post-details > article h1 {
+	margin-bottom: 12px;
+	color: #263b53;
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	line-height: 1.05;
+}
+
+.blog-hero > p:last-child {
+	max-width: 560px;
+	color: #52677c;
+	font-size: 1.05rem;
+}
+
+.blog-form,
+.post-details > article,
+.comments-section {
+	padding: 24px;
+	border: 1px solid #dfd2c7;
+	border-radius: 14px;
+	background: #ffffff;
+	box-shadow: 0 10px 28px rgba(38, 59, 83, 0.08);
+}
+
+.blog-form {
+	display: grid;
+	gap: 12px;
+	margin-bottom: 40px;
+}
+
+.blog-form h2,
+.blog-section-heading h2,
+.comments-section h2 {
+	color: #263b53;
+	font-size: 1.35rem;
+}
+
+.blog-form input,
+.blog-form textarea,
+.comment-input {
+	width: 100%;
+	padding: 12px 14px;
+	border: 1px solid #d8c9bd;
+	border-radius: 8px;
+	background: #fffdfa;
+	color: #33475b;
+	outline: none;
+	resize: vertical;
+}
+
+.blog-form textarea,
+.comment-input {
+	min-height: 120px;
+}
+
+.blog-form input:focus,
+.blog-form textarea:focus,
+.comment-input:focus {
+	border-color: #b65c3a;
+	box-shadow: 0 0 0 3px rgba(182, 92, 58, 0.14);
+}
+
+.blog-form button,
+.comment-submit {
+	justify-self: start;
+	padding: 10px 18px;
+	border: 0;
+	border-radius: 8px;
+	background: #b65c3a;
+	color: #ffffff;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.blog-form button:hover,
+.comment-submit:hover {
+	background: #8f452e;
+}
+
+.blog-message {
+	margin-bottom: 20px;
+	padding: 12px 14px;
+	border-radius: 8px;
+	background: #eef2f5;
+	color: #334f6b;
+}
+
+.blog-message-error {
+	background: #fff0e8;
+	color: #a34f35;
+}
+
+.blog-section-heading {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+
+.blog-section-heading span {
+	color: #78899a;
+	font-size: 0.9rem;
+}
+
+.blog-post-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 18px;
+}
+
+.blog-post-card,
+.comment-card {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border: 1px solid #dfd2c7;
+	border-radius: 12px;
+	background: #ffffff;
+}
+
+.blog-post-card h2 {
+	margin-bottom: 14px;
+	color: #263b53;
+	font-size: 1.15rem;
+	line-height: 1.25;
+}
+
+.blog-post-tags {
+	color: #c16f35;
+	font-size: 0.88rem;
+}
+
+.blog-post-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 14px;
+	margin-top: 12px;
+	color: #78899a;
+	font-size: 0.85rem;
+}
+
+.blog-post-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: auto;
+	padding-top: 24px;
+}
+
+.blog-read-link {
+	color: #b65c3a;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.blog-read-link:hover {
+	text-decoration: underline;
+}
+
+.blog-delete-button {
+	padding: 7px 10px;
+	border: 1px solid #dfb3a1;
+	border-radius: 7px;
+	background: #fff8f5;
+	color: #a34f35;
+	cursor: pointer;
+	font-size: 0.82rem;
+}
+
+.blog-delete-button:hover {
+	background: #ffe5da;
+}
+
+.post-details > article {
+	margin-bottom: 24px;
+	padding: 36px 42px;
+}
+
+.post-details > article h1 {
+	margin-bottom: 28px;
+	color: #263b53;
+	font-size: clamp(2.2rem, 5vw, 4.2rem);
+	line-height: 1.08;
+}
+
+.post-details > article > p:first-of-type {
+	max-width: 760px;
+	margin-bottom: 28px;
+	color: #465d73;
+	font-size: 1.18rem;
+	line-height: 1.9;
+}
+
+.post-details > article .blog-post-tags {
+	margin-bottom: 12px;
+	font-size: 0.98rem;
+}
+
+.post-details > article .blog-post-stats {
+	padding-top: 18px;
+	border-top: 1px solid #eadfd6;
+	font-size: 0.95rem;
+}
+
+.comments-section {
+	display: grid;
+	gap: 16px;
+}
+
+.comment-input {
+	min-height: 100px;
+}
+
+.comment-card {
+	gap: 8px;
+	box-shadow: none;
+}
+
+.comment-card strong {
+	color: #263b53;
+	font-size: 1rem;
+}
+
+.comment-card p {
+	color: #465d73;
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+	.blog-page,
+	.post-details {
+		padding-top: 28px;
+		padding-bottom: 40px;
+	}
+
+	.blog-hero {
+		padding: 28px 22px;
+	}
+
+	.blog-post-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.post-details > article {
+		padding: 26px 22px;
+	}
+}
