@@ -1,84 +1,68 @@
-.favorites-container {
-    width: min(960px, calc(100% - 40px));
-    margin: 0 auto;
-    padding: 56px 0 72px;
+.favorites-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+  text-align: left;
 }
 
-.favorites-container h1 {
-    margin: 0 0 32px;
-
-    color: var(--text-h);
-    font-size: 28px;
-    line-height: 36px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+.favorites-page h1 {
+  margin: 0 0 2rem;
+  color: #173f3a;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
 }
 
-.favorites-empty {
-    padding: 20px 0;
-
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-
-    color: var(--text);
-    font-size: 14px;
+.favorites-page > p {
+  padding: 1rem;
+  border: 1px dashed #b8cbc6;
+  border-radius: 8px;
+  color: #687b78;
 }
 
-.recipes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+.favorites-page .recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-.recipe-item {
-    min-width: 0;
+.favorites-page .recipes-grid > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
 }
 
-.recipe-link {
-    display: block;
-
-    color: inherit;
-    text-decoration: none;
+.favorites-page .recipe-link {
+  display: flex;
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
 }
 
-.recipe-card {
-    overflow: hidden;
-
-    border: 1px solid var(--border);
-    border-radius: 8px;
-
-    background: var(--bg);
-
-    transition:
-        border-color 0.15s ease,
-        transform 0.15s ease;
+.favorites-page .recipe-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #dce9e5;
+  border-radius: 10px;
+  background: #fff;
 }
 
-.recipe-card:hover {
-    border-color: #b8bbc0;
-    transform: translateY(-2px);
+.favorites-page .recipe-card h2 {
+  flex: 1;
+  margin: 1rem;
+  color: #173f3a;
+  font-size: 1.1rem;
 }
 
-.recipe-card img {
-    display: block;
-
-    width: 100%;
-    height: 190px;
-
-    object-fit: cover;
+.favorites-page .recipe-card img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
 }
 
-.recipe-card h2 {
-    margin: 0;
-    padding: 16px;
-
-    color: var(--text-h);
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
-}
-
-.recipe-item > button {
-    margin-top: 10px;
+.favorites-page .favorite-button {
+  margin-top: 0.65rem;
 }
 

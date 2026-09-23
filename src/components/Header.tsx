@@ -24,22 +24,24 @@ export default function Header() {
                         <Link to="/profile">Profile</Link>
                     </li>
                 </ul>
-
                 <ul>
-                    {!loggedUser ? (
-                        <li>
-                            <Link to="/login">Login</Link>
-                        </li>
-                    ) : (
-                        <li>
-                            <Link
-                                to="/"
-                                onClick={() => dispatch(clearLoggedUser())}
-                            >
-                                Log out
-                            </Link>
-                        </li>
-                    )}
+                    {
+                        !loggedUser ?
+                            <>
+                                <li>
+                                    <Link to="/login">Login</Link>
+                                </li>
+                            </>
+                            :
+                            <>
+                                <li>
+                                    <Link to="/" onClick={() => {
+                                        localStorage.removeItem("token");
+                                        dispatch(clearLoggedUser());
+                                    }}>Log out</Link>
+                                </li>
+                            </>
+                    }
                 </ul>
             </nav>
         </header>

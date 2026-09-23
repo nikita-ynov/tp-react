@@ -1,5 +1,3 @@
-
-
 import App from './App.tsx'
 import { Outlet } from 'react-router-dom'
 import Login from './pages/Login.tsx';
@@ -10,6 +8,7 @@ import PrivateRoute from './routes/PrivateRoute.tsx';
 import PageNotFound from './pages/PageNotFound.tsx';
 import Users from './pages/Users.tsx';
 import Favorites from './pages/Favorites.tsx';
+import RecipeDetails from './pages/RecipeDetails.tsx';
 
 const Layout = () => (
     <>
@@ -41,6 +40,10 @@ const routes = [
             {
                 path: "/favorites",
                 element: <Favorites />,
+            },
+            {
+                path: "/recipe/:id",
+                element: <RecipeDetails />,
             },
             {
                 path: "*",

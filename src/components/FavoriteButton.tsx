@@ -33,7 +33,7 @@ function FavoriteButton({recipe}: FavoriteButtonProps) {
     }
 
     return (
-        <button onClick={handleClick}>
+        <button className="favorite-button" type="button" onClick={handleClick}>
             {isFavorite
                 ? "Retirer des favoris"
                 : "Ajouter aux favoris"}

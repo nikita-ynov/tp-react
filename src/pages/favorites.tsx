@@ -9,7 +9,8 @@ function Favorites() {
     )
 
     return (
-        <div className="favorites-container">
+        <div className="favorites-page container">
+
             <h1>Mes recettes favorites</h1>
 
             {favorites.length === 0 && (
@@ -23,7 +24,7 @@ function Favorites() {
                     <div className="recipe-item" key={recipe.id}>
                         <Link
                             className="recipe-link"
-                            to={`/recipedetails/${recipe.id}`}
+                            to={`/recipe/${recipe.id}`}
                         >
                             <div className="recipe-card">
                                 <img
@@ -40,6 +41,7 @@ function Favorites() {
                 ))}
             </div>
         </div>
+
     )
 }
 
