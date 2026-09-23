@@ -6,7 +6,7 @@ export default function Users() {
 
     return (
         <div className="users-container">
-            <h2>Users List:</h2>
+            <h2>Users List</h2>
             <ul>
                 {users.map((user) =>
                     <div>

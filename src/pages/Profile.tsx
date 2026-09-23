@@ -30,14 +30,14 @@ export default function Profile() {
 
             return (
                 <p key={key}>
-                    {key}: {String(value)}
+                    {key.charAt(0).toUpperCase() + key.slice(1)}: {String(value)}
                 </p>
             );
         });
     }
 
     return (
-        <div className="profile-container">
+        <div className="profile-container container">
             <h2>{user?.username}</h2>
             <img src={user?.image} alt={user?.username} />
             <div className='user-info'>
