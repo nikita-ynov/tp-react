@@ -8,6 +8,7 @@ import Header from './components/Header.tsx';
 import GuestRoute from './routes/GuestRoute.tsx';
 import PrivateRoute from './routes/PrivateRoute.tsx';
 import PageNotFound from './pages/PageNotFound.tsx';
+import Users from './pages/Users.tsx';
 
 const Layout = () => (
     <>
@@ -31,6 +32,10 @@ const routes = [
             {
                 path: "/profile",
                 element: <PrivateRoute><Profile /></PrivateRoute>,
+            },
+            {
+                path: "/users",
+                element: <Users />,
             },
             {
                 path: "*",
