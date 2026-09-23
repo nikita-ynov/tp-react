@@ -11,6 +11,7 @@ import RecipeDetails from './pages/RecipeDetails.tsx';
 import Blog from './pages/Blog.tsx';
 import PostDetails from './pages/PostDetails.tsx';
 import Favorites from "./pages/favorites.tsx";
+import User from './pages/User.tsx';
 
 const Layout = () => (
     <>
