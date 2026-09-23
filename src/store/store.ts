@@ -4,6 +4,7 @@ import authReducer from './reducers/auth'
 import loadingReducer from './reducers/loading'
 import favoritesRecucer from "./reducers/favorites.ts";
 import recipeReducer from './reducers/recipe';
+import blogReducer from './reducers/blog';
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
         loading: loadingReducer,
         favorites : favoritesRecucer,
         recipe: recipeReducer,
+        blog: blogReducer,
     }
 })
 export type AppStore = typeof store

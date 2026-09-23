@@ -7,8 +7,10 @@ import GuestRoute from './routes/GuestRoute.tsx';
 import PrivateRoute from './routes/PrivateRoute.tsx';
 import PageNotFound from './pages/PageNotFound.tsx';
 import Users from './pages/Users.tsx';
-import Favorites from './pages/Favorites.tsx';
 import RecipeDetails from './pages/RecipeDetails.tsx';
+import Blog from './pages/Blog.tsx';
+import PostDetails from './pages/PostDetails.tsx';
+import Favorites from "./pages/favorites.tsx";
 
 const Layout = () => (
     <>
@@ -44,6 +46,14 @@ const routes = [
             {
                 path: "/recipe/:id",
                 element: <RecipeDetails />,
+            },
+            {
+                path: "/blog",
+                element: <Blog />,
+            },
+            {
+                path: "/posts/:id",
+                element: <PostDetails />,
             },
             {
                 path: "*",

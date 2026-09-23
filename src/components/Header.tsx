@@ -23,6 +23,9 @@ export default function Header() {
                     <li>
                         <Link to="/profile">Profile</Link>
                     </li>
+                    <li>
+                        <Link to="/blog">Blog</Link>
+                    </li>
                 </ul>
                 <ul>
                     {
