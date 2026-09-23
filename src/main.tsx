@@ -27,12 +27,19 @@ const getUsers = async () => {
 }
 
 const getLoggedUser = async () => {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    store.dispatch(setLoggedUser(null));
+    return;
+  }
+
   try {
     const url = "https://dummyjson.com/auth/me";
     const response = await axios.get(url, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
+        'Authorization': `Bearer ${token}`
       }
     });
     store.dispatch(setLoggedUser(response.data))
