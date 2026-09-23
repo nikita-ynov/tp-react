@@ -1,32 +1,103 @@
-# React + TypeScript + Vite
+# TP React - Application de recettes
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Application web de recettes réalisée avec React et TypeScript. Elle permet de consulter des recettes, d'afficher leur détail, de gérer des favoris et de se connecter à un compte utilisateur.
 
-Currently, two official plugins are available:
+## Présentation des contributeurs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Cette partie doit être complétée par les trois contributeurs. Chaque personne présente elle-même son travail en utilisant la première personne.
 
-## React Compiler
+### Contributeur 1 - [Nom et prénom]
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> Je me suis occupé(e) de ...
+>
+> J'ai réalisé ...
+>
+> Les fichiers ou fonctionnalités principales de ma partie sont : ...
 
-## Expanding the Oxlint configuration
+### Contributeur 2 - [Nom et prénom]
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+> Je me suis occupé(e) de ...
+>
+> J'ai réalisé ...
+>
+> Les fichiers ou fonctionnalités principales de ma partie sont : ...
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### Contributeur 3 - [Nom et prénom]
+
+> Je me suis occupé(e) de ...
+>
+> J'ai réalisé ...
+>
+> Les fichiers ou fonctionnalités principales de ma partie sont : ...
+
+## Fonctionnalités
+
+- Affichage de la liste des recettes depuis l'API DummyJSON.
+- Consultation du détail d'une recette avec l'URL `/recipe/:id`.
+- Ajout et retrait de recettes dans les favoris.
+- Connexion et déconnexion d'un utilisateur.
+- Conservation de la session grâce au token stocké dans `localStorage`.
+- Accès protégé au profil utilisateur.
+- Affichage de la liste des utilisateurs.
+- Navigation entre les pages avec React Router.
+
+## Technologies utilisées
+
+- React 19
+- TypeScript
+- Vite
+- Redux Toolkit et React Redux
+- React Router DOM
+- Axios
+- API [DummyJSON](https://dummyjson.com/)
+
+## Installation
+
+Prérequis : Node.js et npm installés.
+
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Lancer le projet
+
+Pour démarrer le serveur de développement :
+
+```bash
+npm run dev
+```
+
+L'application sera disponible à l'adresse indiquée par Vite, généralement `http://localhost:5173`.
+
+## Scripts disponibles
+
+| Commande | Description |
+| --- | --- |
+| `npm run dev` | Lance le serveur de développement Vite |
+| `npm run build` | Vérifie TypeScript et construit l'application |
+| `npm run lint` | Analyse le code avec Oxlint |
+| `npm run preview` | Lance un aperçu de la version construite |
+
+## Organisation du projet
+
+```text
+src/
+├── components/       # Composants réutilisables comme Header et RecipeCard
+├── pages/            # Pages de l'application
+├── routes/           # Routes publiques et protégées
+├── store/            # Store Redux et reducers
+├── types/            # Types TypeScript
+├── App.tsx           # Page d'accueil et chargement des recettes
+├── routes.tsx        # Configuration des routes
+└── main.tsx          # Point d'entrée et initialisation de l'application
+```
+
+## API utilisée
+
+Les recettes et les utilisateurs viennent de DummyJSON :
+
+- `https://dummyjson.com/recipes`
+- `https://dummyjson.com/recipes/:id`
+- `https://dummyjson.com/users`
+- `https://dummyjson.com/auth/login`
+- `https://dummyjson.com/auth/me`
