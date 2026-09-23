@@ -6,7 +6,6 @@ import type { RootState } from "../store/store";
 import { setCurrentRecipe } from "../store/reducers/recipe";
 import type { Recipe } from "../types/recipe";
 import Error from "./PageNotFound";
-import "./RecipeDetails.css";
 
 export default function RecipeDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -53,7 +52,7 @@ export default function RecipeDetailPage() {
   }
 
   return (
-    <main className="recipe-detail">
+    <main className="recipe-detail container">
       <img src={recipe.image} alt={recipe.name} className="recipe-detail-image" />
       <div className="recipe-detail-content">
         <h1>{recipe.name}</h1>

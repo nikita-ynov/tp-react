@@ -7,7 +7,7 @@ import GuestRoute from './routes/GuestRoute.tsx';
 import PrivateRoute from './routes/PrivateRoute.tsx';
 import PageNotFound from './pages/PageNotFound.tsx';
 import Users from './pages/Users.tsx';
-import Favorites from './pages/favorites.tsx';
+import Favorites from './pages/Favorites.tsx';
 import RecipeDetails from './pages/RecipeDetails.tsx';
 
 const Layout = () => (

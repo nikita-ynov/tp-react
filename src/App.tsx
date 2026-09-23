@@ -5,7 +5,6 @@ import type { RootState } from "./store/store";
 import { setRecipes } from "./store/reducers/recipe";
 import type { RecipesResponse } from "./types/recipe";
 import RecipeCard from "./components/RecipeCard";
-import "./App.css";
 
 // Affiche la liste d'accueil des recettes stockées dans le store Redux
 function App() {

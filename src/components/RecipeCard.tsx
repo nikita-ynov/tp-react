@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Recipe } from '../types/recipe';
 import FavoriteButton from './FavoriteButton';
-import "./RecipeCard.css";
 
 interface RecipeCardProps {
   recipe: Recipe;

@@ -66,14 +66,3 @@
   margin-top: 0.65rem;
 }
 
-@media (max-width: 950px) {
-  .favorites-page .recipes-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 620px) {
-  .favorites-page .recipes-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}

@@ -1,5 +1,14 @@
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import './styles/index.css'
+import './styles/header.css'
+import './styles/profile.css'
+import './styles/login.css'
+import './styles/users.css'
+import './styles/favorites.css'
+import './styles/page-not-found.css'
+import "./styles/recipeDetails.css";
+import "./styles/recipeCard.css";
+import "./styles/App.css";
 
 import routes from './routes.tsx'
 
