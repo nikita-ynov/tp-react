@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import type {AppDispatch, RootState} from "../store/store.ts";
 import {addComment, addPost, removeComment, setComments, type Post, type PostComment} from "../store/reducers/blog.ts";
+import PageNotFound from "./PageNotFound.tsx";
 import "../styles/blog.css";
 
 interface CommentsResponse {
@@ -145,7 +146,7 @@ function PostDetails() {
     }
 
     if (!post) {
-        return <p>Article introuvable.</p>;
+        return <PageNotFound />;
     }
 
     return (
