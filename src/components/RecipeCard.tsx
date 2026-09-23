@@ -13,6 +13,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
       <Link to={`/recipe/${recipe.id}`} className="recipe-card">
         <img src={recipe.image} alt={recipe.name} />
         <h3>{recipe.name}</h3>
+        <p>Temps de préparation : {recipe.prepTimeMinutes} min</p>
         <p>Cuisson : {recipe.cookTimeMinutes} min</p>
       </Link>
       <FavoriteButton recipe={recipe} />
