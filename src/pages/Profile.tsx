@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '../store/store';
 
 export default function Profile() {
+
     const users = useSelector((state: RootState) => state.user.users);
     const loggedUser = useSelector((state: RootState) => state.auth.loggedUser);
 
