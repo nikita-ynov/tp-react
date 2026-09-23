@@ -17,7 +17,8 @@ export default function Login() {
             })
 
             localStorage.setItem("token", token.data.accessToken)
-            navigate(`/profile/`);
+
+            navigate(`/`);
         } catch (e) {
             setError(true)
         }

@@ -4,10 +4,14 @@ import App from './App.tsx'
 import { Outlet } from 'react-router-dom'
 import Login from './pages/Login.tsx';
 import Profile from './pages/Profile.tsx';
+import Header from './components/Header.tsx';
+import GuestRoute from './routes/GuestRoute.tsx';
+import PrivateRoute from './routes/PrivateRoute.tsx';
+import PageNotFound from './pages/PageNotFound.tsx';
 
 const Layout = () => (
     <>
-        {/* <Header /> */}
+        <Header />
         <Outlet />
     </>
 )
@@ -22,25 +26,16 @@ const routes = [
             },
             {
                 path: "/login",
-                element: <Login />,
+                element: <GuestRoute><Login /></GuestRoute>,
             },
             {
                 path: "/profile",
-                element: <Profile />,
+                element: <PrivateRoute><Profile /></PrivateRoute>,
             },
-            // {
-            //     path: "/user-lsit",
-            //     element: <UserList />,
-            // },
-            // {
-            //     path: "/user/:id",
-            //     element: <User />,
-            // },
-
-            // {
-            //     path: "*",
-            //     element: <PageNotFound />,
-            // },
+            {
+                path: "*",
+                element: <PageNotFound />,
+            },
         ]
     }
 ]
