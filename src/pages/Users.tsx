@@ -9,15 +9,18 @@ export default function Users() {
         <div className="users-container">
             <h2>Users List</h2>
             <ul>
-                {users.map((user) =>
-                    <div>
-                        <li>
-                            <img src={user.image} alt="" />
-                            <p>{user.username}</p>
-                            <Link to={"/user/" + user.id}>Go to user</Link>
-                        </li>
-                    </div>
-                )}
+                {users.map((user) => (
+                    <li key={user.id}>
+                        <img src={user.image} alt={user.username} />
+                        <div className="user-summary">
+                            <p>{user.firstName} {user.lastName}</p>
+                            <span>@{user.username}</span>
+                        </div>
+                        <Link className="user-details-link" to={`/user/${user.id}`}>
+                            Voir le profil
+                        </Link>
+                    </li>
+                ))}
             </ul>
         </div>
     )

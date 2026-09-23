@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }: PrivateRouteProps) => {
   const loggedUser = useSelector((state: RootState) => state.auth.loggedUser);
   const loading = useSelector((state: RootState) => state.loading.value)
   if (loading) return <div>Loading ...</div>
-  return loggedUser ? <>{children}</> : <Navigate to="/" replace />;
+  return loggedUser ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
 export default PrivateRoute;
