@@ -35,7 +35,10 @@ export default function Header() {
                         :
                         <>
                             <li>
-                                <Link to="/" onClick={() => dispatch(clearLoggedUser())}>Log out</Link>
+                                <Link to="/" onClick={() => {
+                                    localStorage.removeItem("token");
+                                    dispatch(clearLoggedUser());
+                                }}>Log out</Link>
                             </li>
                         </>
                 }
