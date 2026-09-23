@@ -1,45 +1,43 @@
 import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 
-export interface FavoriteRecipe {
-    id: number;
+export interface RecipeThumbnail {
+    id : number;
     name: string;
-    image: string;
     prepTimeMinutes: number;
+    image: string;
 }
 
-interface FavoritesState {
-    recipes: FavoriteRecipe[];
+interface FavoriteState {
+    recipes: RecipeThumbnail[];
 }
 
-const initialState: FavoritesState = {
+const initialState: FavoriteState = {
     recipes: [],
-};
+}
 
-const favoritesSlice = createSlice({
+const favoriteSlice = createSlice({
     name: "favorites",
     initialState,
     reducers: {
-        toggleFavorite: (state, action: PayloadAction<FavoriteRecipe>) => {
-            const index = state.recipes.findIndex(
+        toggleFavorite: (state, action: PayloadAction<RecipeThumbnail>) => {
+            const recipeExist = state.recipes.find(
                 recipe => recipe.id === action.payload.id
             );
 
-            if (index === -1) {
-                state.recipes.push(action.payload);
+            if (recipeExist) {
+                state.recipes = state.recipes.filter(
+                    recipe => recipe.id !== action.payload.id
+                );
             } else {
-                state.recipes.splice(index, 1);
+                state.recipes.push(action.payload);
             }
         },
-
-        clearFavorites: state => {
+        clearFavorites: (state) => {
             state.recipes = [];
-        },
-    },
-});
+        }
+    }
+})
 
-export const {
-    toggleFavorite,
-    clearFavorites,
-} = favoritesSlice.actions;
+export const {toggleFavorite, clearFavorites} = favoriteSlice.actions;
 
-export default favoritesSlice.reducer;
+export default favoriteSlice.reducer;

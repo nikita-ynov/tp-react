@@ -1,13 +1,13 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
+import {type RecipeThumbnail, toggleFavorite} from "../store/reducers/favorites.ts";
 import type {AppDispatch, RootState} from "../store/store.ts";
-import {type FavoriteRecipe, toggleFavorite} from "../store/reducers/favorites.ts";
 
 interface FavoriteButtonProps {
-    recipe: FavoriteRecipe;
+    recipe: RecipeThumbnail;
 }
 
-const FavoriteButton = ({recipe}: FavoriteButtonProps) => {
+function FavoriteButton({recipe}: FavoriteButtonProps) {
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
 
@@ -15,10 +15,12 @@ const FavoriteButton = ({recipe}: FavoriteButtonProps) => {
         (state: RootState) => state.auth.loggedUser
     );
 
-    const isFavorite = useSelector((state: RootState) =>
-        state.favorites.recipes.some(
-            favorite => favorite.id === recipe.id
-        )
+    const favorites = useSelector(
+        (state: RootState) => state.favorites.recipes
+    );
+
+    const isFavorite = favorites.some(
+        favorite => favorite.id === recipe.id
     );
 
     const handleClick = () => {
@@ -28,13 +30,15 @@ const FavoriteButton = ({recipe}: FavoriteButtonProps) => {
         }
 
         dispatch(toggleFavorite(recipe));
-    };
+    }
 
     return (
-        <button type="button" onClick={handleClick}>
-            {isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
+        <button onClick={handleClick}>
+            {isFavorite
+                ? "Retirer des favoris"
+                : "Ajouter aux favoris"}
         </button>
-    );
-};
+    )
+}
 
 export default FavoriteButton;
